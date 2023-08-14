@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %}{% endblock %}
+
+{% block content%}
+
+ <!-- Three columns of text below the carousel -->
+    <h3>Nos meilleures ventes</h3>
+    <p>Découvrez les articles les plus vendus.</p>
+    <div class="row">
+    {% for product in products %}
+      <div class="col-md-3">
+         {% include 'product/single_product.html.twig' %}
+         </div>
+    {% endfor %}
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">En collaboration avec les plus grandes marques mondiales  <span class="text-body-secondary"></span></h2>
+        <p class="lead">Avec des partenaires tels que Paco Rabbane, Azzaro, Calvin Klein et bien d'autres Brise d'été s'est imposé comme le précurseur de la parfurmerie en France.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{ asset('assets/img/first.jpg') }}" class="img-fluid" alt="Un savoir faire à la française">
+        
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Conçus dans nos laboratoires <span class="text-body-secondary">par nos meilleurs scientifiques</span></h2>
+        <p class="lead">Brise d'été possède ses propres laboratoires et sa propre équipe de scientifiques de renommée mondiale. Nous effectuons depuis plus de vingt ans nos propres recherches en innovation.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{{ asset('assets/img/second.jpg') }}" class="img-fluid" alt="Conçus par nos meilleurs scientifiques">
+        
+      </div>
+    </div>
+
+   
+
+   
+
+    <!-- /END THE FEATURETTES -->
+
+
+{% endblock %}

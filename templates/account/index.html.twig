@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte-Brise d'été{% endblock %}
+
+{% block content %}
+    <h1>Mon compte</h1>
+        {% if is_granted('ROLE_ADMIN')  %}
+    <small><a href="/admin">Vous êtes un administrateur, accéder au backoffice ?</a></small><br/>
+    {% endif %}
+    Bienvenue {{ app.user.firstname }} dans votre compte.<br/>
+    C'est dans cet espace que vous allez pouvoir gérer vos informations personnelles.
+    <hr>
+
+    <a href="{{ path('account_password') }}">Modifier mon mot de passe</a><br/>
+    <a href="{{ path('account_address') }}">Gérer mes addresses</a><br/>
+    <a href="{{ path('account_order') }}">Mes commandes</a><br/>
+    <hr>
+{% endblock %}
